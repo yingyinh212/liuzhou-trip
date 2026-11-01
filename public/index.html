@@ -2,6 +2,18 @@
 :root{--bg:#f7f5ef;--paper:#fffefa;--ink:#263e39;--muted:#788b84;--line:#dfe8df;--accent:#267f6e;--soft:#e6f2ec;--a:#d58a5f;--b:#6987a5}
 @media(prefers-color-scheme:dark){:root{--bg:#14211e;--paper:#21332e;--ink:#f1f4ed;--muted:#afc1b6;--line:#3b5148;--accent:#83d8bf;--soft:#2e4a3f;--a:#f2ad7d;--b:#a7c0e7}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}main{max-width:900px;margin:auto;padding:20px 16px 60px}header{padding:46px 8px 30px}header small{color:var(--accent);letter-spacing:.16em}h1{font-size:clamp(3rem,10vw,5.5rem);margin:4px 0;font-weight:750;letter-spacing:-.07em}h2{font-size:1.6rem;margin:38px 0 12px}h3{margin:0 0 8px}p{margin:8px 0;color:var(--muted)}.sub{font-size:1.04rem}.card{background:var(--paper);border:1px solid var(--line);border-radius:23px;padding:22px;margin:14px 0}.soft{background:var(--soft)}.eyebrow{font-size:.75rem;letter-spacing:.1em;color:var(--accent);font-weight:700}.count{font-size:clamp(2.2rem,8vw,4rem);font-weight:750;letter-spacing:-.04em;line-height:1.35;font-variant-numeric:tabular-nums}.note{font-size:.85rem}.section-title{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{display:inline-block;border-radius:18px;padding:5px 12px;background:var(--soft);color:var(--accent);font-size:.82rem;font-weight:700}.timeline{margin:18px 0 0}.event{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.time{font-weight:750;color:var(--accent);font-size:.9rem}.event strong{font-size:1.03rem}.event p{margin:2px 0}.foods{padding:16px;background:var(--soft);border-radius:18px;margin:12px 0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.chip{background:var(--paper);border:1px solid var(--line);padding:7px 12px;border-radius:13px;font-weight:600}.link{color:var(--accent);font-weight:700;text-decoration:none}a{text-decoration:none}button,.btn{display:inline-block;border:0;background:var(--accent);color:var(--bg);border-radius:13px;padding:10px 15px;font-size:.9rem;font-weight:700;cursor:pointer}.outline{background:var(--soft);color:var(--accent)}details{border:1px solid var(--line);background:var(--paper);border-radius:17px;margin:10px 0;padding:14px}summary{cursor:pointer;font-weight:700}svg{width:100%;height:auto;border-radius:16px;background:#eaf0e7}ul{padding-left:20px}li{padding:5px 0}footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px} .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}@media(max-width:550px){.grid{grid-template-columns:1fr}.card{padding:17px}header{padding-top:22px}}
+
+.todo-items{display:flex;flex-direction:column}
+.todo-item{appearance:none;-webkit-appearance:none;display:flex;align-items:center;gap:14px;width:100%;padding:17px 1px;border:0;border-radius:0;border-bottom:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:clamp(.94rem,3.6vw,1.07rem);font-weight:500;text-align:left;line-height:1.45;cursor:pointer;min-height:60px}
+.todo-item:last-child{border-bottom:0}.todo-item:disabled{opacity:.6;cursor:wait}
+.todo-circle{width:23px;height:23px;flex:0 0 23px;border:2px solid var(--accent);border-radius:50%;display:grid;place-items:center;transition:background .18s ease}
+.todo-item[aria-pressed="true"] .todo-circle{background:var(--accent)}
+.todo-item[aria-pressed="true"] .todo-circle:after{content:"✓";font-size:15px;font-weight:800;color:var(--paper);line-height:1}
+.todo-item[aria-pressed="true"] .todo-label{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+.todo-label{flex:1;min-width:0}.todo-state{font-size:.77rem;white-space:nowrap;color:var(--accent);font-weight:700}
+.todo-error{font-size:.8rem;margin:4px 0 0;color:var(--a)}.todo-error:empty{display:none}
+.todo-item:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media(hover:hover){.todo-item:not(:disabled):hover{background:var(--soft)}}
 </style></head><body><main><header><small>2026 · 11.27 — 11.29 · 2 PERSONS</small><h1>柳州</h1><div class="sub">宋终于吃螺狮粉，于是才有了以下</div></header>
 <section class="card soft"><div class="eyebrow">此刻关注 · 中国标准时间 UTC+8</div><h3 id="next">下一段行程</h3><div id="count" class="count">—天 —时 —分 —秒</div><p id="when"></p></section>
 <h2>行程总览地图</h2><section class="card"><svg viewBox="0 0 560 610" role="img" aria-label="柳州三天路线：第一天柳州站、酒店、五星步行街、音乐喷泉；第二天酒店、青云市场、柳州博物馆、龙潭公园；第三天酒店返回柳州站。" style="width:100%;height:auto;display:block;border-radius:16px">
@@ -40,5 +52,66 @@
 <div class="event" data-time="2026-11-28T13:30:00+08:00" data-name="前往龙潭公园"><div class="time">13:30</div><div><strong>打车前往龙潭公园</strong></div></div>
 <div class="event" data-time="2026-11-28T14:00:00+08:00" data-name="游览龙潭公园"><div class="time">14:00</div><div><strong>龙潭公园</strong><p>游览至17:30左右</p><a class="link" href="https://maps.apple.com/?q=%E9%BE%99%E6%BD%AD%E5%85%AC%E5%9B%AD%20%E6%9F%B3%E5%B7%9E">Apple 地图导航 ↗</a></div></div><div class="event" data-time="2026-11-28T18:30:00+08:00" data-name="晚餐"><div class="time">18:30</div><div><strong>晚餐</strong></div></div></div></section>
 <section class="card" id="d3"><div class="section-title"><div><div class="eyebrow">DAY 03 · 11月29日 周日</div><h3>早餐 · 返回广州</h3></div><span class="tag">返程</span></div><details><summary>展开当天路线地图及导航</summary><p>酒店 → 柳州站</p><a class="link" href="https://maps.apple.com/?saddr=%E9%87%91%E7%9A%87%E5%86%A0%E6%9F%8F%E6%9B%BC%E9%85%92%E5%BA%97%20%E6%9F%B3%E5%B7%9E&daddr=%E6%9F%B3%E5%B7%9E%E7%AB%99" target="_blank">打开返程导航 ↗</a></details><div class="timeline"><div class="event" data-time="2026-11-29T08:00:00+08:00" data-name="早餐"><div class="time">08:00</div><div><strong>早餐</strong></div></div><div class="event" data-time="2026-11-29T09:15:00+08:00" data-name="酒店退房"><div class="time">09:15</div><div><strong>酒店退房</strong></div></div><div class="event" data-time="2026-11-29T09:30:00+08:00" data-name="前往柳州站"><div class="time">09:30</div><div><strong>打车前往柳州站</strong></div></div><div class="event" data-time="2026-11-29T10:00:00+08:00" data-name="到达柳州站"><div class="time">10:00</div><div><strong>进站安检候车</strong></div></div><div class="event" data-time="2026-11-29T11:15:00+08:00" data-name="高铁返程"><div class="time">11:15</div><div><strong>D3665 柳州 → 广州南</strong><p>14:48 计划抵达广州南站</p></div></div></div></section>
-<h2>待办清单</h2><section class="card"><ul><li>购买去程高铁票 G3876</li><li>购买返程高铁票 D3665</li><li>预订金皇冠柏曼酒店两晚</li><li>出发前确认柳江音乐喷泉开放</li></ul></section><footer>柳州 · 2026.11.27—29</footer></main>
-<script>const events=[...document.querySelectorAll('[data-time]')].map(e=>({date:new Date(e.dataset.time),name:e.dataset.name})).sort((a,b)=>a.date-b.date);function tick(){let now=new Date(),n=events.find(e=>e.date>now);if(!n){document.querySelector('#next').textContent='旅途已结束';document.querySelector('#count').textContent='柳州，后会有期';document.querySelector('#when').textContent='';return}let v=Math.floor((n.date-now)/1000),d=Math.floor(v/86400);v%=86400;let h=Math.floor(v/3600);v%=3600;let m=Math.floor(v/60),s=v%60;document.querySelector('#next').textContent=n.name;document.querySelector('#count').textContent=d+'天 '+String(h).padStart(2,'0')+'时 '+String(m).padStart(2,'0')+'分 '+String(s).padStart(2,'0')+'秒';document.querySelector('#when').textContent=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'long',day:'numeric',weekday:'long',hour:'2-digit',minute:'2-digit',hour12:false}).format(n.date)+' · 中国时间'}tick();setInterval(tick,1000)</script></body></html>
+<h2>待办清单</h2><section class="card" id="todo-list" aria-label="两人共享待办清单">
+<div class="todo-items">
+<button class="todo-item" type="button" data-task="outbound-train" aria-pressed="false" disabled><span class="todo-circle" aria-hidden="true"></span><span class="todo-label">购买去程高铁票 G3876</span><span class="todo-state"></span></button>
+<button class="todo-item" type="button" data-task="return-train" aria-pressed="false" disabled><span class="todo-circle" aria-hidden="true"></span><span class="todo-label">购买返程高铁票 D3665</span><span class="todo-state"></span></button>
+<button class="todo-item" type="button" data-task="hotel" aria-pressed="false" disabled><span class="todo-circle" aria-hidden="true"></span><span class="todo-label">预订金皇冠柏曼酒店两晚</span><span class="todo-state"></span></button>
+<button class="todo-item" type="button" data-task="fountain" aria-pressed="false" disabled><span class="todo-circle" aria-hidden="true"></span><span class="todo-label">出发前确认柳江音乐喷泉开放</span><span class="todo-state"></span></button>
+</div><p id="todo-error" class="todo-error" role="status" aria-live="polite"></p></section><footer>柳州 · 2026.11.27—29</footer></main>
+<script>const checklistButtons=[...document.querySelectorAll("[data-task]")];
+const checklistMessage=document.getElementById("todo-error");
+let sharedTasks={};
+let checklistBusy=false;
+function drawChecklist(){
+  for(const button of checklistButtons){
+    const done=sharedTasks[button.dataset.task]===true;
+    button.setAttribute("aria-pressed",String(done));
+    button.querySelector(".todo-state").textContent=done?"已完成":"";
+  }
+}
+async function loadChecklist(){
+  if(checklistBusy)return;
+  try{
+    const response=await fetch("/api/checklist",{cache:"no-store"});
+    if(!response.ok)throw Error("sync failed");
+    const data=await response.json();
+    sharedTasks=data.tasks||{};
+    drawChecklist();
+    checklistMessage.textContent="";
+    checklistButtons.forEach(button=>button.disabled=false);
+  }catch(error){
+    checklistMessage.textContent="待办同步暂时不可用，请稍后刷新。";
+    checklistButtons.forEach(button=>button.disabled=true);
+  }
+}
+checklistButtons.forEach(button=>button.addEventListener("click",async()=>{
+  if(checklistBusy)return;
+  checklistBusy=true;
+  checklistButtons.forEach(item=>item.disabled=true);
+  const id=button.dataset.task;
+  const next=sharedTasks[id]!==true;
+  try{
+    const response=await fetch("/api/checklist",{
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({id,completed:next}),
+      cache:"no-store"
+    });
+    if(!response.ok)throw Error("update failed");
+    const data=await response.json();
+    sharedTasks=data.tasks||{};
+    drawChecklist();
+    checklistMessage.textContent="";
+  }catch(error){
+    checklistMessage.textContent="保存失败，请检查网络后重试。";
+  }finally{
+    checklistBusy=false;
+    checklistButtons.forEach(item=>item.disabled=false);
+  }
+}));
+loadChecklist();
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadChecklist()});
+setInterval(()=>{if(!document.hidden)loadChecklist()},15000);
+
+const events=[...document.querySelectorAll('[data-time]')].map(e=>({date:new Date(e.dataset.time),name:e.dataset.name})).sort((a,b)=>a.date-b.date);function tick(){let now=new Date(),n=events.find(e=>e.date>now);if(!n){document.querySelector('#next').textContent='旅途已结束';document.querySelector('#count').textContent='柳州，后会有期';document.querySelector('#when').textContent='';return}let v=Math.floor((n.date-now)/1000),d=Math.floor(v/86400);v%=86400;let h=Math.floor(v/3600);v%=3600;let m=Math.floor(v/60),s=v%60;document.querySelector('#next').textContent=n.name;document.querySelector('#count').textContent=d+'天 '+String(h).padStart(2,'0')+'时 '+String(m).padStart(2,'0')+'分 '+String(s).padStart(2,'0')+'秒';document.querySelector('#when').textContent=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'long',day:'numeric',weekday:'long',hour:'2-digit',minute:'2-digit',hour12:false}).format(n.date)+' · 中国时间'}tick();setInterval(tick,1000)</script></body></html>
