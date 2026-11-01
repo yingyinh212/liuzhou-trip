@@ -1,6 +1,6 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f7f5ef"><title>柳州 · 2026.11.27—29</title><style>
-:root{--bg:#f7f5ef;--paper:#fffefa;--ink:#263e39;--muted:#788b84;--line:#dfe8df;--accent:#267f6e;--soft:#e6f2ec;--a:#d58a5f;--b:#6987a5}
-@media(prefers-color-scheme:dark){:root{--bg:#14211e;--paper:#21332e;--ink:#f1f4ed;--muted:#afc1b6;--line:#3b5148;--accent:#83d8bf;--soft:#2e4a3f;--a:#f2ad7d;--b:#a7c0e7}}
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#faf8f3"><title>柳州 · 2026.11.27—29</title><style>
+:root{color-scheme:light;--bg:#faf8f3;--paper:#fffefa;--ink:#2b403c;--muted:#75857d;--line:#e4e9e3;--accent:#377f70;--soft:#eaf5ef;--a:#d58a5f;--b:#6987a5}
+
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}main{max-width:900px;margin:auto;padding:20px 16px 60px}header{padding:46px 8px 30px}header small{color:var(--accent);letter-spacing:.16em}h1{font-size:clamp(3rem,10vw,5.5rem);margin:4px 0;font-weight:750;letter-spacing:-.07em}h2{font-size:1.6rem;margin:38px 0 12px}h3{margin:0 0 8px}p{margin:8px 0;color:var(--muted)}.sub{font-size:1.04rem}.card{background:var(--paper);border:1px solid var(--line);border-radius:23px;padding:22px;margin:14px 0}.soft{background:var(--soft)}.eyebrow{font-size:.75rem;letter-spacing:.1em;color:var(--accent);font-weight:700}.count{font-size:clamp(2.2rem,8vw,4rem);font-weight:750;letter-spacing:-.04em;line-height:1.35;font-variant-numeric:tabular-nums}.note{font-size:.85rem}.section-title{display:flex;justify-content:space-between;align-items:center;gap:8px}.tag{display:inline-block;border-radius:18px;padding:5px 12px;background:var(--soft);color:var(--accent);font-size:.82rem;font-weight:700}.timeline{margin:18px 0 0}.event{display:grid;grid-template-columns:56px 1fr;gap:12px;padding:13px 0;border-top:1px solid var(--line)}.time{font-weight:750;color:var(--accent);font-size:.9rem}.event strong{font-size:1.03rem}.event p{margin:2px 0}.foods{padding:16px;background:var(--soft);border-radius:18px;margin:12px 0}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.chip{background:var(--paper);border:1px solid var(--line);padding:7px 12px;border-radius:13px;font-weight:600}.link{color:var(--accent);font-weight:700;text-decoration:none}a{text-decoration:none}button,.btn{display:inline-block;border:0;background:var(--accent);color:var(--bg);border-radius:13px;padding:10px 15px;font-size:.9rem;font-weight:700;cursor:pointer}.outline{background:var(--soft);color:var(--accent)}details{border:1px solid var(--line);background:var(--paper);border-radius:17px;margin:10px 0;padding:14px}summary{cursor:pointer;font-weight:700}svg{width:100%;height:auto;border-radius:16px;background:#eaf0e7}ul{padding-left:20px}li{padding:5px 0}footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px} .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}@media(max-width:550px){.grid{grid-template-columns:1fr}.card{padding:17px}header{padding-top:22px}}
 
 .todo-items{display:flex;flex-direction:column}
@@ -14,6 +14,44 @@
 .todo-error{font-size:.8rem;margin:4px 0 0;color:var(--a)}.todo-error:empty{display:none}
 .todo-item:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 @media(hover:hover){.todo-item:not(:disabled):hover{background:var(--soft)}}
+
+/* A soft, consistent palette on mobile and desktop. */
+body{background:var(--bg);overflow-x:hidden}
+main{width:100%;overflow-wrap:anywhere}
+.card{box-shadow:0 6px 22px rgba(43,64,60,.035)}
+header small{color:#72998d}
+header .sub{color:#6c827a}
+main>section.card.soft{background:#e9f4ee;border-color:#d9e9de}
+main>h2:nth-of-type(1)+section.card{background:#f4f4e9;border-color:#e8e9d7}
+.grid .card:first-child{background:#edf4fa;border-color:#dce8f3}
+.grid .card:last-child{background:#f0eef9;border-color:#e2dff2}
+.grid+.card{background:#fff3e9;border-color:#f1e4d7}
+#d1{background:#fff1e7;border-color:#f2e3d7}
+#d2{background:#eff5ed;border-color:#dce8d9}
+#d3{background:#f0f1fa;border-color:#e1e3f0}
+#d1 .tag{background:#ffe3cc;color:#95603f}
+#d2 .tag{background:#dfeede;color:#4b7862}
+#d3 .tag{background:#e2e4f7;color:#676c9a}
+#d1 .time{color:#b97753}
+#d2 .time{color:#4d8a74}
+#d3 .time{color:#777eaf}
+#d1 .foods{background:#ffeadb}
+#d2 .foods{background:#e5f0e5}
+#todo-list{background:#e9f5ee;border-color:#d7eadd}
+#todo-list .todo-item{background:transparent;color:var(--ink)}
+#todo-list .todo-item:not(:last-child){border-bottom:1px solid #d1e4d9}
+.todo-circle{background:#fffefa}
+.todo-item[aria-pressed="true"] .todo-circle{background:#397e6d;border-color:#397e6d}
+.todo-item[aria-pressed="true"] .todo-label{color:#83968e}
+.todo-item[aria-pressed="true"] .todo-state{color:#397e6d}
+.todo-item:disabled{opacity:.85}
+@media(max-width:550px){
+ main{padding:16px 15px 52px}
+ .card{padding:17px;border-radius:20px}
+ .todo-item{font-size:15px;gap:11px;min-height:61px}
+ .todo-circle{width:22px;height:22px;flex-basis:22px}
+ .todo-state{font-size:11px}
+}
 </style></head><body><main><header><small>2026 · 11.27 — 11.29 · 2 PERSONS</small><h1>柳州</h1><div class="sub">宋终于吃螺狮粉，于是才有了以下</div></header>
 <section class="card soft"><div class="eyebrow">此刻关注 · 中国标准时间 UTC+8</div><h3 id="next">下一段行程</h3><div id="count" class="count">—天 —时 —分 —秒</div><p id="when"></p></section>
 <h2>行程总览地图</h2><section class="card"><svg viewBox="0 0 560 610" role="img" aria-label="柳州三天路线：第一天柳州站、酒店、五星步行街、音乐喷泉；第二天酒店、青云市场、柳州博物馆、龙潭公园；第三天酒店返回柳州站。" style="width:100%;height:auto;display:block;border-radius:16px">
