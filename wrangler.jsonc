@@ -1,7 +1,26 @@
 {
   "name": "liuzhou-trip",
   "compatibility_date": "2026-11-01",
+  "main": "./src/index.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "TRIP_CHECKLIST",
+        "class_name": "TripChecklist"
+      }
+    ]
+  },
+  "exports": {
+    "TripChecklist": {
+      "type": "durable-object",
+      "storage": "sqlite"
+    }
   }
 }
